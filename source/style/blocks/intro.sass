@@ -1,0 +1,53 @@
+.intro
+	height: 600px
+	display: flex
+	align-items: center
+	background-image: $main-gradient
+	color: #fff
+	position: relative
+	z-index: 1
+	@media #{$_sm}
+		height: 100%
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: url('../img/bg/intro.jpg')
+		background-size: cover
+		z-index: -1
+		opacity: 0.41
+		mix-blend-mode: overlay  // смешиваем картинку с задним фоном - нашим градиентом чтобы добиться единообразия
+	&__container
+		+container()
+		// сюда вставить значение, чтобы перебить стили по умолчанию, например, написать justify-content: center	
+		@media #{$_sm}
+			display: flex
+			flex-direction: column
+	&__info
+		justify-content: center
+		+col(9)
+		@media #{$_sm}
+			+col(6)
+			width: 100%
+	&__stat
+		+col(3)
+		@media #{$_sm}
+			+col(6)
+			width: 100%
+	&-info
+		&__text
+			margin: 22px 0 65px // отступ сверху тк title самостоятельный блок и мы не отталкиваемся от него
+			line-height: 1.67
+			font-weight: 900
+	&-stat
+		text-align: center
+		line-height: 1.4
+		margin-bottom: 30px
+		&__num
+			font-size: 48px
+		>span
+			font-weight: 900px
+			display: block

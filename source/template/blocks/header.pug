@@ -1,0 +1,16 @@
+mixin header(data)
+	+b.HEADER.header
+		+e.DIV.container
+			+e.DIV.logo
+				//- сделали элементом (4 строка), чтобы можно было в дальнейшем использовать в другом месте и с другими размерами вложенный в него блок -  b.A.logo ()
+				+b.A.logo(href="#")
+					+e.IMG.img(src="assets/img/icons/logo.svg")
+			+e.DIV.nav
+				+b.NAV.header-nav
+					each item in data.menu
+						+e.DIV.item
+							+e.A.link(href="item.href")= item.text
+			+e.DIV.btn
+				+b.BUTTON.btn(class="--header") Заявка на просчет
+ 
+//- item - переменная (10 строка) и затем берем данные с этого объекта (строка 12)

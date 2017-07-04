@@ -1,0 +1,49 @@
+.btn
+	display: block
+	//сбрасываем дефолтные стили кнопок
+	padding: 0
+	border: none
+
+	width: 261px
+	height: 50px
+	line-height: 50px * 0.95 // тк в макете надпись не по центру
+	position: relative
+	// box-sizing: border-box
+	background: $accent-gradient
+	border-radius: 100px
+	text-align: center
+	color: #fff
+	font-weight: 900
+	cursor: pointer
+
+	// описываем состояние кнопок
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		border-radius: 100px
+		width: 100%
+		height: 100%
+		box-shadow: 0 6px 23px 0 rgba(248, 116, 143, 0.51)
+		z-index: -1
+		transition: all .3s
+	&:active
+		&:after
+			box-shadow: 0 3px 9px 0 rgba(248, 116, 143, 0.51)
+	&--header
+		width: 200px
+		height: 40px
+		line-height: 40px
+		border: 2px solid #f7879c
+		background: transparent
+		color: $font-color-dark
+		outline: none
+		display: inline-block
+		&:after
+			opacity: 0
+		&:hover
+			color: #fff
+			background: $accent-gradient
+			&:after
+				opacity: 1

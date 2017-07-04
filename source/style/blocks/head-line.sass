@@ -1,0 +1,20 @@
+.head-line
+	height: 70px
+	line-height: 70px
+	color: #fff
+	background: $main-gradient
+	&__container
+		+container() //используем миксин 
+	&-item
+		&__icon
+			margin-right: 7px
+			&:before //делаем иконки градиентными за счет фона
+				background: $accent-gradient
+				-webkit-background-clip: text
+				color: transparent
+
+	
+	
+
+	
+

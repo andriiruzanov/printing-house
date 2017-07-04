@@ -1,0 +1,66 @@
+include ../bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+
+include blocks/head-line
+include blocks/header
+include blocks/intro
+
+//- чтобы тайтл можно было использовать и на других страницах
+include blocks/title
+
+//- block variables
+
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title #{title}
+        meta(content="" name="author")
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+        //- favicon block start
+        //- favicon block end
+
+        link(rel='stylesheet' href='/assets/css/foundation.css')
+        link(rel='stylesheet' href='/assets/css/app.css')
+        
+        
+        script(src='/assets/js/foundation.js' defer)
+        script(src='/assets/js/app.js' defer)
+
+    +b.BODY.page
+        +e.DIV.wrap
+            block header
+                +head-line()
+                +header({
+                    "menu": [
+                        {
+                            "text": "Главная",
+                            "href": "index.html"
+                        },                        
+                        {
+                            "text": "О нас",
+                            "href": "index.html"
+                        },                        
+                        {
+                            "text": "Услуги",
+                            "href": "index.html"
+                        },{
+                            "text": "Информация",
+                            "href": "index.html"
+                        },                        
+                        {
+                            "text": "Контакты",
+                            "href": "index.html"
+                        },
+
+                    ]
+                })
+            block content
+                div 
+            block footer
+                footer 
+
